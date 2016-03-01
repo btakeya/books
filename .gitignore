@@ -4,4 +4,6 @@
 .settings
 
 # Gradle
+.gradle
 bin
+build
