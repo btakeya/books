@@ -6,7 +6,6 @@ public class Book {
 	private Integer price;
 	
 	public Book(long id, String koreanTitle, String englishTitle, Integer price) {
-		super();
 		this.id = id;
 		this.title = new Title(koreanTitle, englishTitle);
 		this.price = price;
