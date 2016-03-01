@@ -1,0 +1,7 @@
+# IDE Specific
+.classpath
+.project
+.settings
+
+# Gradle
+bin
