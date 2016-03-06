@@ -12,7 +12,7 @@ import books.repository.BooksRepository;
 
 @ComponentScan
 @RestController
-@RequestMapping("/book")
+@RequestMapping("/books")
 public class BooksController {
 	private Logger log = LoggerFactory.getLogger(BooksController.class);
 
@@ -46,9 +46,12 @@ public class BooksController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String postBook(@RequestParam(value = "id", defaultValue = "0") int id) {
+	public String postBook(@RequestParam(value = "title", required = true) String title,
+						   @RequestParam(value = "price", required = true) int price) {
 		log.debug("[POST] postBook()");
-		return "[POST] " + id;
+		Book newBook = new Book(0, title, price);
+		repo.save(newBook);
+		return "[POST] " + newBook.toString();
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
