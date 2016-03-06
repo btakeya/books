@@ -52,9 +52,9 @@ public class Book {
 
 	public String toString() {
 		return  "Book: {\n" +
-				  "ID: " + id + "\n" +
-				  "Title: " + title + "\n" + 
-				  "Price: " + price + "\n" +
+				"  ID: " + id + "\n" +
+				"  Title: " + title + "\n" + 
+				"  Price: " + price + "\n" +
 				"}";
 	}
 }
