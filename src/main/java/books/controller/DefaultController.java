@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @SpringBootApplication
-@RequestMapping("/")
-public class LostController {
+@RequestMapping()
+public class DefaultController {
     @RequestMapping(method = RequestMethod.GET)
-	String lost() {
-		return "You're lost!";
+	String index() {
+		return "On my way.";
 	}
 }
