@@ -55,9 +55,15 @@ public class BooksController {
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
-	public String putBook(@RequestParam(value = "id", defaultValue = "0") int id) {
+	public String putBook(@RequestParam(value = "id", required = true) long id,
+						  @RequestParam(value = "title", required = false) String title,
+						  @RequestParam(value = "price", required = false) Integer price) {
 		log.debug("[PUT] putBook()");
-		return "[PUT] " + id;
+		Book updatedBook = repo.getOne(id);
+		if (title != null) updatedBook.setTitle(title);
+		if (price != null) updatedBook.setPrice(price);
+		repo.save(updatedBook);
+		return "[PUT] " + updatedBook.toString();
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE)
