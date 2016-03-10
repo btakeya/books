@@ -67,8 +67,10 @@ public class BooksController {
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE)
-	public String deleteBook(@RequestParam(value = "id", defaultValue = "0") int id) {
+	public String deleteBook(@RequestParam(value = "id", defaultValue = "0") long id) {
 		log.debug("[DELETE] deleteBook()");
-		return "[DELETE] " + id;
+		Book deletedBook = repo.getOne(id);
+		repo.delete(id);
+		return "[DELETE] " + deletedBook.toString();
 	}
 }
