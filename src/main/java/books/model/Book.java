@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 @Entity
 @Table(name = "shelf")
 public class Book {
@@ -51,10 +54,7 @@ public class Book {
 	}
 
 	public String toString() {
-		return  "Book: {\n" +
-				"  ID: " + id + "\n" +
-				"  Title: " + title + "\n" + 
-				"  Price: " + price + "\n" +
-				"}";
+		ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+		return ""; 
 	}
 }
