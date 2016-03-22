@@ -54,7 +54,6 @@ public class Book {
 	}
 
 	public String toString() {
-		ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
-		return ""; 
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 }
